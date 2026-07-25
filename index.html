@@ -50,7 +50,9 @@
   "areaServed": ["Saint-Renan", "Plouzané", "Guilers", "Brest", "Le Conquet", "Plougonvelin", "Plouarzel"],
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Saint-Renan",
+    "streetAddress": "3 rue de Ty Varlaes",
+    "postalCode": "29280",
+    "addressLocality": "Locmaria-Plouzané",
     "addressRegion": "Bretagne",
     "addressCountry": "FR"
   },
@@ -360,11 +362,22 @@
   /* ---------- GALLERY ---------- */
   .gallery{padding:90px 0; background:var(--bg-soft);}
   .gallery-grid{
-    columns:4; column-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+  }
+  .gallery-grid figure{
+    margin:0;
+    aspect-ratio:4/5;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 14px 30px -18px rgba(58,42,55,.4);
   }
   .gallery-grid img{
-    width:100%; margin-bottom:18px; border-radius:18px;
-    box-shadow:0 14px 30px -18px rgba(58,42,55,.4);
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 20%;
+    display:block;
   }
 
   /* ---------- BOOKING ---------- */
@@ -409,12 +422,17 @@
   .foot-bottom{
     margin-top:50px; padding-top:24px; border-top:1px solid rgba(255,255,255,.12);
     text-align:center; font-size:.82rem; color:rgba(230,215,224,.6);
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.6em 1.4em;
   }
+  .foot-links{display:flex; flex-wrap:wrap; justify-content:center; gap:1.2em;}
+  .foot-links a{text-decoration:underline; text-underline-offset:3px;}
   .social-pill{
     display:inline-flex; align-items:center; gap:.5em;
     background:rgba(255,255,255,.08); padding:.6em 1.1em; border-radius:100px;
     font-size:.85rem; font-weight:600; margin-top:.5em;
+    text-decoration:none; transition:background .2s ease;
   }
+  .social-pill:hover{background:rgba(255,255,255,.16);}
 
   @media (max-width: 980px){
     .hero .container{grid-template-columns:1fr;}
@@ -422,7 +440,7 @@
     .philosophy .container{grid-template-columns:1fr;}
     .card-grid{grid-template-columns:repeat(2,1fr);}
     .zones .container{grid-template-columns:1fr;}
-    .gallery-grid{columns:2;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
     footer .container{grid-template-columns:1fr; gap:32px;}
     nav.links{display:none;}
     .burger{display:block;}
@@ -496,7 +514,7 @@
       <p>Nous privilégions une ambiance calme pour que chaque rendez-vous reste un pur plaisir — pour votre compagnon comme pour vous.</p>
       <ul class="philo-list">
         <li><span class="philo-dot">1</span><div><strong>Écoute &amp; douceur</strong><br>Le soin s'adapte à l'humeur et au tempérament de l'animal.</div></li>
-        <li><span class="philo-dot">2</span><div><strong>Produits propres</strong><br>Des produits dits "propres", sans additif, utilisés pour chaque soin à domicile.</div></li>
+        <li><span class="philo-dot">2</span><div><strong>Des produits doux</strong><br>Des produits sans additif, choisis avec soin pour chaque soin à domicile.</div></li>
         <li><span class="philo-dot">3</span><div><strong>Sur rendez-vous uniquement</strong><br>Chaque créneau est pensé pour un seul chien à la fois, en toute sérénité.</div></li>
       </ul>
     </div>
@@ -508,7 +526,7 @@
     <div class="section-head">
       <span class="eyebrow">Nos bulles de douceur</span>
       <h2>Des soins pensés comme des rituels</h2>
-      <p>Du massage flash à l'expérience complète, chaque soin est réalisé avec des produits et un matériel professionnels.</p>
+      <p>Du massage flash à l'expérience complète, chaque soin est réalisé avec des produits doux et beaucoup d'attention.</p>
     </div>
     <div class="card-grid">
       <div class="price-card">
@@ -519,7 +537,7 @@
       </div>
       <div class="price-card">
         <span class="price-tag">20 €</span>
-        <span class="price-card-time">20 min · produits propres</span>
+        <span class="price-card-time">20 min · produits doux</span>
         <h3>Pattes de Velours</h3>
         <p>Soin des coussinets et griffes : massage doux, protection et baume hydratant.</p>
       </div>
@@ -527,7 +545,7 @@
         <span class="price-tag">50 €</span>
         <span class="price-card-time">45 min</span>
         <h3>La Bulle d'Argile</h3>
-        <p>Masque à la boue d'argile et enveloppement, purifiant et reminéralisant.</p>
+        <p>Enveloppement à la boue d'argile, purifiant et reminéralisant.</p>
       </div>
       <div class="price-card featured">
         <span class="price-tag">80 €</span>
@@ -551,7 +569,7 @@
     </div>
     <div class="zone-card">
       <h3>🚐 Service à domicile</h3>
-      <p>Soins réalisés chez vous les <strong>lundis, mardis et vendredis</strong>, avec notre matériel professionnel pliable.</p>
+      <p>Soins réalisés chez vous, dans le calme de votre intérieur, les <strong>lundis, mardis et vendredis</strong>.</p>
       <div>
         <span class="schedule-pill">📅 Lundi</span>
         <span class="schedule-pill">📅 Mardi</span>
@@ -575,14 +593,14 @@
       <h2>Des moments de douceur, en images</h2>
     </div>
     <div class="gallery-grid">
-      <img src="images/gallery-01.jpg" width="1000" height="1777" alt="Séance de soin Eliwa" loading="lazy">
-      <img src="images/gallery-06.jpg" width="1000" height="1777" alt="Bain tout en douceur pour chien" loading="lazy">
-      <img src="images/gallery-10.jpg" width="1000" height="1777" alt="Soin bien-être d'un spitz poméranien" loading="lazy">
-      <img src="images/gallery-04.jpg" width="1000" height="1777" alt="Petit chien détendu après son soin" loading="lazy">
-      <img src="images/gallery-07.jpg" width="1000" height="1777" alt="Séchage tout en douceur" loading="lazy">
-      <img src="images/gallery-02.jpg" width="1000" height="1777" alt="Moment de complicité pendant le soin" loading="lazy">
-      <img src="images/gallery-05.jpg" width="772" height="910" alt="Chien détendu après sa séance bien-être" loading="lazy">
-      <img src="images/gallery-09.jpg" width="1000" height="1777" alt="Câlin avant le soin" loading="lazy">
+      <figure><img src="images/gallery-01.jpg" width="1000" height="1777" alt="Séance de soin Eliwa" loading="lazy"></figure>
+      <figure><img src="images/gallery-06.jpg" width="1000" height="1777" alt="Bain tout en douceur pour chien" loading="lazy"></figure>
+      <figure><img src="images/gallery-10.jpg" width="1000" height="1777" alt="Soin bien-être d'un spitz poméranien" loading="lazy"></figure>
+      <figure><img src="images/gallery-04.jpg" width="1000" height="1777" alt="Petit chien détendu après son soin" loading="lazy"></figure>
+      <figure><img src="images/gallery-07.jpg" width="1000" height="1777" alt="Séchage tout en douceur" loading="lazy"></figure>
+      <figure><img src="images/gallery-02.jpg" width="1000" height="1777" alt="Moment de complicité pendant le soin" loading="lazy"></figure>
+      <figure><img src="images/gallery-05.jpg" width="772" height="910" alt="Chien détendu après sa séance bien-être" loading="lazy"></figure>
+      <figure><img src="images/gallery-09.jpg" width="1000" height="1777" alt="Câlin avant le soin" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -621,8 +639,8 @@
   <div class="container">
     <div>
       <h3>Eliwa</h3>
-      <p style="color:#cdb9c8; max-width:32ch;">Détente et soins bien-être pour animaux — Elisa Hébrard. Sur rendez-vous uniquement.</p>
-      <div class="social-pill">📷 @eliwa.spa.canin</div>
+      <p style="color:#cdb9c8; max-width:32ch;">Détente et soins bien-être pour animaux. Sur rendez-vous uniquement.</p>
+      <a class="social-pill" href="https://www.instagram.com/eliwa.spa.canin" target="_blank" rel="noopener noreferrer">📷 Instagram — @eliwa.spa.canin</a>
     </div>
     <div>
       <h3>Contact</h3>
@@ -643,9 +661,11 @@
     </div>
   </div>
   <div class="foot-bottom container">
-    © 2026 Eliwa — Détente et soins bien-être pour animaux. Tous droits réservés. ·
-    <a href="mentions-legales.html" style="text-decoration:underline;">Mentions légales</a> ·
-    <a href="politique-confidentialite.html" style="text-decoration:underline;">Politique de confidentialité</a>
+    <span>© 2026 Eliwa — Détente et soins bien-être pour animaux. Tous droits réservés.</span>
+    <span class="foot-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </span>
   </div>
 </footer>
 
