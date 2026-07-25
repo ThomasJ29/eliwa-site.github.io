@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eliwa-bienetreanimal.fr/sitemap.xml
