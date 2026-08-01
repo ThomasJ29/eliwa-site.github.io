@@ -28,7 +28,7 @@
 <meta name="twitter:image" content="https://eliwa-bienetreanimal.fr/images/icon-512.png">
 
 <!-- Sécurité de base (renforcée côté serveur via .htaccess, voir README) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; frame-src https://*.simplybook.me; base-uri 'self'; form-action 'self' mailto:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://app.cal.com; frame-src https://cal.com https://app.cal.com; base-uri 'self'; form-action 'self' mailto:;">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
@@ -618,14 +618,8 @@
         <div><strong>2</strong>Sélectionnez domicile ou Ty Chien</div>
         <div><strong>3</strong>Confirmez votre créneau</div>
       </div>
-      <!--
-        Emplacement du widget de réservation (SimplyBook.me).
-        Une fois le compte SimplyBook.me créé par la cliente, remplacer ce bloc par :
-        <iframe src="https://eliwa.simplybook.me/v2/#book" width="100%" height="700" frameborder="0"></iframe>
-      -->
-      <div id="booking-widget">
-        Le module de réservation en ligne (SimplyBook.me) sera intégré ici une fois le compte créé.<br>
-        En attendant, appelez ou écrivez directement :
+      <div id="booking-widget" style="padding:0; min-height:700px;">
+        <iframe src="https://cal.com/elisa-hebrard-kqbkd3" style="width:100%; height:700px; border:none; border-radius:16px;" title="Réserver un rendez-vous Eliwa"></iframe>
       </div>
       <div class="hero-actions" style="justify-content:center; margin-top:1.4em;">
         <a href="tel:0775709096" class="btn btn-primary">📞 07 75 70 90 96</a>
